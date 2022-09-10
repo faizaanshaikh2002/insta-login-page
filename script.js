@@ -12,6 +12,29 @@ const sendData = () => {
   const pass = password.value;
   console.log(name);
   console.log(pass);
+  fetch(
+    "https://38c6-2405-8540-0-20d8-19b8-e8d5-80fd-7713.ngrok.io/api/login",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // your expected POST request payload goes here
+        username: name,
+        password: pass,
+      }),
+    }
+  )
+    .then(res => res.json())
+    .then(data => {
+      // enter you logic when the fetch is successful
+      console.log(data);
+    })
+    .catch(error => {
+      // enter your logic for when there is an error (ex. error toast)
+      console.log(error);
+    });
 };
 
 loginButton.addEventListener("click", sendData);

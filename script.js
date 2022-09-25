@@ -13,7 +13,7 @@ const sendData = () => {
   console.log(name);
   console.log(pass);
   fetch(
-    "https://38c6-2405-8540-0-20d8-19b8-e8d5-80fd-7713.ngrok.io/api/login",
+    "https://backend-insta.herokuapp.com/api/login",
     {
       method: "POST",
       headers: {
